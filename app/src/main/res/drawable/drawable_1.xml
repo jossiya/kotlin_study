@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 기본 상태 (아무것도 눌리지 않았을 때) -->
+    <item android:drawable="@drawable/ic_launcher_foreground"/>
+    <!-- 버튼을 눌렀을 때 (Pressed) -->
+    <item android:drawable="@drawable/dog" android:state_pressed="true"/>
+
+</selector>
