@@ -2,19 +2,19 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="ViewControl_02 (1)">
+      <SelectionState runConfigName="intent_One (3)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Homwork_1">
+      <SelectionState runConfigName="intent_One (2)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Homework_1">
+      <SelectionState runConfigName="intent_One (4)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Homework_1 (1)">
+      <SelectionState runConfigName="Intent_One">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Homework_1 (2)">
+      <SelectionState runConfigName="Intent_One (1)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
