@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_first"
+        android:name="com.example.fastcampus.FragmentFirst"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:layout="@layout/first_fragment"
+        />
+
+    <TextView
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="add"
+        android:gravity="center"
+        android:background="@drawable/yellow_background"
+        android:textSize="30dp"
+        />
+    <TextView
+        android:id="@+id/remove"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="remove"
+        android:gravity="center"
+        android:background="@drawable/yellow_background"
+        android:textSize="30dp"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/access_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="access fragment"
+        android:textSize="50dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:gravity="center" />
+</androidx.appcompat.widget.LinearLayoutCompat>
