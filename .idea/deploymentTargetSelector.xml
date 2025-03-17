@@ -5,19 +5,19 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="GlideActivity (1)">
+      <SelectionState runConfigName="AddViewActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="GlideActivity (2)">
+      <SelectionState runConfigName="AddViewActivity (1)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="GlideActivity (3)">
+      <SelectionState runConfigName="AddViewActivity (2)">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="GlideActivity (4)">
+      <SelectionState runConfigName="PhoneBookActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="GlideActivity (5)">
+      <SelectionState runConfigName="PhoneBookDetailActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
