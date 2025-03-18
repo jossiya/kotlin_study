@@ -16,10 +16,13 @@
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
         <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListViewActivity"
             android:exported="false" />
         <activity
-            android:name=".RecyclerViewActivity"
+            android:name=".RecyclerViewHomework"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".PhoneBookActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".AddViewActivity"
             android:exported="false" />
