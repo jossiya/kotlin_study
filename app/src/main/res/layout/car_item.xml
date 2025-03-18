@@ -19,7 +19,7 @@
         android:layout_weight="1"
         />
     <TextView
-        android:id="@+id/nthEngin"
+        android:id="@+id/nthEngine"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:textSize="20dp"

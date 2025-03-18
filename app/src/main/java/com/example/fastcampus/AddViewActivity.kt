@@ -30,10 +30,10 @@ class AddViewActivity : AppCompatActivity() {
             val carItemView = inflater.inflate(R.layout.car_item, null)
             val carImage = carItemView.findViewById<ImageView>(R.id.carImage)
             val nthCar = carItemView.findViewById<TextView>(R.id.nthCar)
-            val nthEngin = carItemView.findViewById<TextView>(R.id.nthEngin)
+            val nthEngine = carItemView.findViewById<TextView>(R.id.nthEngine)
             carImage.setImageDrawable(resources.getDrawable(R.drawable.blue_background, this.theme))
             nthCar.text = it.nthCar
-            nthEngin.text = it. nthEngine
+            nthEngine.text = it. nthEngine
             container.addView(carItemView)
         }
 
