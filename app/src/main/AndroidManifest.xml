@@ -16,13 +16,13 @@
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerViewActivity"
+            android:name=".TablayoutPagerSimpleActivity"
             android:exported="false" />
         <activity
-            android:name=".ListViewActivity"
+            android:name=".TablayoutPagerNewActivity"
             android:exported="false" />
         <activity
-            android:name=".RecyclerViewHomework"
+            android:name=".SharedPreferenceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +30,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TablayoutPagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerViewHomework"
+            android:exported="false" />
         <activity
             android:name=".PhoneBookDetailActivity"
             android:exported="false" />
