@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CAMERA" />
+    
     <application
         android:name=".MasterApplication"
         android:allowBackup="true"
@@ -17,7 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".RetrofitActivity"
+            android:name=".PermissionActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +27,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".RetrofitActivity"
+            android:exported="false"/>
+
+        <activity
             android:name=".NetworkActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".RoomActivity"
             android:exported="false" />

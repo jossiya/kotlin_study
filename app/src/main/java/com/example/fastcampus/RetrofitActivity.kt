@@ -36,59 +36,62 @@ class RetrofitActivity : AppCompatActivity() {
             .build()
             .create(RetrofitService::class.java)
 
-            CoroutineScope(Dispatchers.IO).launch {
-                try {
-                    val response = retrofit.getStudentList()
-                    if (response.isSuccessful) {
-                        val students = response.body()
-                        withContext(Dispatchers.Main) {
-                            findViewById<RecyclerView>(R.id.studentsRecyclerview).apply{
-                                this.adapter = StudentListRecyclerViewAdapter(students!!, LayoutInflater.from(this@RetrofitActivity) )
-                                this.layoutManager = LinearLayoutManager(this@RetrofitActivity)
-                            }
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val response = retrofit.getStudentList()
+                if (response.isSuccessful) {
+                    val students = response.body()
+                    withContext(Dispatchers.Main) {
+                        findViewById<RecyclerView>(R.id.studentsRecyclerview).apply {
+                            this.adapter = StudentListRecyclerViewAdapter(
+                                students!!,
+                                LayoutInflater.from(this@RetrofitActivity)
+                            )
+                            this.layoutManager = LinearLayoutManager(this@RetrofitActivity)
                         }
-                    }else{
-                        Log.e("RetrofitTest", "Error Code: ${response.code()}")
                     }
-                }catch (e: Exception){
-                    e.printStackTrace()
-                    Log.e("RetrofitTest", "Error: ${e.message}")
+                } else {
+                    Log.e("RetrofitTest", "Error Code: ${response.code()}")
                 }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Log.e("RetrofitTest", "Error: ${e.message}")
             }
-        findViewById<TextView>(R.id.studentCreate).setOnClickListener{
+        }
+        findViewById<TextView>(R.id.studentCreate).setOnClickListener {
             val student = HashMap<String, Any>()
             student["name"] = "조철호"
-            student["age"] =40
+            student["age"] = 40
             student["intro"] = "코틀린 빡세요"
-            CoroutineScope(Dispatchers.IO).launch{
+            CoroutineScope(Dispatchers.IO).launch {
                 val response = retrofit.createStudent(student)
-                try{
+                try {
                     if (response.isSuccessful) {
                         withContext(Dispatchers.Main) {
                             Log.e("RetrofitTest", "성공: ${response.body()}")
                         }
-                    }else{
+                    } else {
                         Log.e("RetrofitTest", "Error Code: ${response.code()}")
                     }
-                }catch (e : Exception){
+                } catch (e: Exception) {
                     e.printStackTrace()
                     Log.e("RetrofitTest", "Error: ${e.message}")
                 }
             }
         }
         findViewById<TextView>(R.id.easyStudentCreate).setOnClickListener {
-            val student = StudentFromServer(name = "하나", age = 100, "hello kotlin" )
-            CoroutineScope(Dispatchers.IO).launch{
+            val student = StudentFromServer(name = "하나", age = 100, "hello kotlin")
+            CoroutineScope(Dispatchers.IO).launch {
                 val response = retrofit.easyCreateStudent(student)
-                try{
+                try {
                     if (response.isSuccessful) {
                         withContext(Dispatchers.Main) {
                             Log.e("RetrofitTest", "성공: ${response.body()}")
                         }
-                    }else{
+                    } else {
                         Log.e("RetrofitTest", "Error Code: ${response.code()}")
                     }
-                }catch (e : Exception){
+                } catch (e: Exception) {
                     e.printStackTrace()
                     Log.e("RetrofitTest", "Error: ${e.message}")
                 }
@@ -97,16 +100,17 @@ class RetrofitActivity : AppCompatActivity() {
 
     }
 }
+
 class StudentListRecyclerViewAdapter(
     var studentList: List<StudentFromServer>,
     var inflater: LayoutInflater
-): RecyclerView.Adapter<StudentListRecyclerViewAdapter.ViewHolder>(){
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+) : RecyclerView.Adapter<StudentListRecyclerViewAdapter.ViewHolder>() {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val studentName: TextView
         val studentAge: TextView
         val studentIntro: TextView
 
-        init{
+        init {
             studentName = itemView.findViewById(R.id.studentName)
             studentAge = itemView.findViewById(R.id.studentAge)
             studentIntro = itemView.findViewById(R.id.studentIntro)
