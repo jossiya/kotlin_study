@@ -10,11 +10,20 @@ data class StudentFromServer(
 ){
     constructor( name: String, age: Int, intro: String):this(0, name, age, intro)
 }
+data class YoutubeItem(val id: Int, val title: String, val content: String, val video: String, val thumbnail: String)
+
 interface RetrofitService {
     @GET("json/students/")
-    suspend fun getStudentList():Response<List<StudentFromServer>>
+    suspend fun getStudentList(): Response<List<StudentFromServer>>
+
     @POST("json/students/")
-    suspend fun createStudent(@Body params:HashMap<String, Any>):Response<StudentFromServer>
+    suspend fun createStudent(@Body params: HashMap<String, Any>): Response<StudentFromServer>
+
     @POST("json/students/")
-    suspend fun easyCreateStudent(@Body params:StudentFromServer):Response<StudentFromServer>
+    suspend fun easyCreateStudent(@Body params: StudentFromServer): Response<StudentFromServer>
+
+    @GET("youtube/list/")
+    suspend fun getYoutubeItemList(): Response<List<YoutubeItem>>
 }
+
+
