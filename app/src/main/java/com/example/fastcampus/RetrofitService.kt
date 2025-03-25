@@ -4,6 +4,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import java.io.Serializable
 
 data class StudentFromServer(
     val id: Int, val name: String, val age: Int, val intro: String
@@ -12,7 +13,13 @@ data class StudentFromServer(
 }
 data class YoutubeItem(val id: Int, val title: String, val content: String, val video: String, val thumbnail: String)
 
+data class MelonItem(
+    val id: Int, val title: String, val song: String, val thumbnail: String
+):Serializable
 interface RetrofitService {
+    @GET("melon/list/")
+    suspend fun getMelonItemList(): Response<List<MelonItem>>
+
     @GET("json/students/")
     suspend fun getStudentList(): Response<List<StudentFromServer>>
 
@@ -23,7 +30,7 @@ interface RetrofitService {
     suspend fun easyCreateStudent(@Body params: StudentFromServer): Response<StudentFromServer>
 
     @GET("youtube/list/")
-    suspend fun getYoutubeItemList(): Response<List<YoutubeItem>>
+    suspend fun getYoutubeItemList(): Response<ArrayList<YoutubeItem>>
 }
 
 
